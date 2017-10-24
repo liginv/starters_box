@@ -7,6 +7,15 @@ let config = {
         path: path.resolve(__dirname, './public'), //output file
         filename: 'script.js' //output filename
     },
+    module: {
+        rules: [{
+                test: /\.js$/, // files ending with .js
+                exclude: /node_modules/, // exclude the node_modules directory
+                loader: "babel-loader" // use this (babel-core) loader
+            },    	
+    },
+    plugins : [
+    ],
     devServer: {
         contentBase: path.resolve(__dirname, './public'),
         // A directory or URL to serve HTML content from.
