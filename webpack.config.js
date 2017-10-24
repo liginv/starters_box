@@ -3,6 +3,7 @@ const path = require('path');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
+const WorkboxBuildWebpackPlugin = require('workbox-webpack-plugin');
 
 let config = {
     entry: './src/index.js', //entry file
@@ -61,6 +62,14 @@ let config = {
     plugins: [
     	new ExtractTextWebpackPlugin('styles.css'),
         //call the ExtractTextWebpackPlugin constructor and name our css file
+        new WorkboxBuildWebpackPlugin({
+            globDirectory: 'public/',
+            globPatterns: ['**/*.{html,js,css}'],
+            // globIgnores: ['admin.html'],
+            swSrc: './src/sw.js',
+            swDest: './public/sw.js'
+            }),
+        // make sure the above workbox plugin is the last one for effective cacheing
     ],
     devServer: {
         contentBase: path.resolve(__dirname, './public'),
