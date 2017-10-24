@@ -64,7 +64,7 @@ let config = {
     	new ExtractTextWebpackPlugin('styles.css'),
         //call the ExtractTextWebpackPlugin constructor and name our css file
         new HtmlWebpackPlugin({
-            title:'New Project',
+            title:'Starter\'s Box',
             template: './src/index.html',
         }),
         new WorkboxBuildWebpackPlugin({
