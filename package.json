@@ -12,5 +12,9 @@
     "art"
   ],
   "author": "Ligin Vellakkad",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  }
 }
