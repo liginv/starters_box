@@ -12,10 +12,10 @@ let config = {
                 test: /\.js$/, // files ending with .js
                 exclude: /node_modules/, // exclude the node_modules directory
                 loader: "babel-loader" // use this (babel-core) loader
-            },    	
+            },            
+        ]
     },
-    plugins : [
-    ],
+    plugins: [],
     devServer: {
         contentBase: path.resolve(__dirname, './public'),
         // A directory or URL to serve HTML content from.
