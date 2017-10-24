@@ -1,17 +1,26 @@
 {
   "name": "starter's_box",
   "version": "1.0.0",
-  "description": "A multidisciplinary entertainment company.",
+  "description": "An easy way to start web porject.",
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
     "start": "webpack --progress && webpack-dev-server -d --hot --config webpack.config.js --watch",
     "production": "NODE_ENV=production webpack"
   },
+  "repository" :
+    { "type" : "git"
+    , "url" : "https://github.com/liginv/starters_box"
+    },
+  "bugs": {
+    "url": "https://github.com/liginv/starters_box/issues",
+    "email": "ligindd@gmail.com"
+  },
+  "homepage": "https://github.com/liginv/starters_box",
   "keywords": [
-    "multimedia",
-    "entertainment",
-    "art"
+    "webpack_2",
+    "pwa",
+    "npm"
   ],
   "author": "Ligin Vellakkad",
   "license": "ISC",
