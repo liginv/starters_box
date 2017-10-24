@@ -20,6 +20,39 @@ let config = {
                     use: ['css-loader', 'sass-loader'],
                     fallback: 'style-loader'
                 }) //end extract
+            },
+            {
+                test: /\.(jpe?g|png}gif|svg)$/i,
+                loaders: ['file-loader?content=src/assets/images/&name=images/[path][name]/[ext]', {
+                    loader: 'image-webpack-loader',
+                    query: {
+                        mozjpeg: {
+                            progrssive: true,
+                            quality: 65
+                        },
+                        gifsicle: {
+                            interlaced: false,
+                        },
+                        // optipng.enabled: false will disable optipng
+                        optipng: {
+                            enable: false,
+                            optimizationLevel: 4,
+                        },
+                        pngquant: {
+                            quality: '65-90',
+                            speed: 4,
+                        },
+                        gifsicle: {
+                            interlaced: false,
+                        },
+                        // the webp option will enable WEBP
+                        webp: {
+                          quality: 75
+                        }
+                    },
+                }],
+                exclude: /node_modules/,
+                include: __dirname,
             },            
         ]
     },
@@ -42,8 +75,8 @@ let config = {
 module.exports = config;
 
 if (process.env.NODE_ENV == 'production') {
-    // module.exports.plugins.push(
+    module.exports.plugins.push(
     //     new webpack.optimize.UglifyJsPlugin(), // call the uglify plugin
     //     new OptimizeCSSAssets() // call the css optimizer (minification)
-    // );
+    );
 }
