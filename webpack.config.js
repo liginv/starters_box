@@ -16,10 +16,10 @@ let config = {
             },
             {
                 test: /\.scss$/, // files ending with .scss
-                use: ExtractTextWebpackPlugin.extract({
-                    use: ['css-loader', 'sass-loader'],
-                    fallback: 'style-loader'
-                }) //end extract
+                use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
+                                    fallback: 'style-loader',
+                                    use: ['css-loader', 'sass-loader'],
+                                })), //end extract
             },
             {
                 test: /\.(jpe?g|png}gif|svg)$/i,
