@@ -4,6 +4,7 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 const WorkboxBuildWebpackPlugin = require('workbox-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let config = {
     entry: './src/index.js', //entry file
@@ -62,6 +63,10 @@ let config = {
     plugins: [
     	new ExtractTextWebpackPlugin('styles.css'),
         //call the ExtractTextWebpackPlugin constructor and name our css file
+        new HtmlWebpackPlugin({
+            title:'New Project',
+            template: './src/index.html',
+        }),
         new WorkboxBuildWebpackPlugin({
             globDirectory: 'public/',
             globPatterns: ['**/*.{html,js,css}'],
