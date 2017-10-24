@@ -4,7 +4,6 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 
-
 let config = {
     entry: './src/index.js', //entry file
     output: {
@@ -60,7 +59,7 @@ let config = {
         ]
     },
     plugins: [
-    	new ExtractTextWebpackPlugin('style.css'),
+    	new ExtractTextWebpackPlugin('styles.css'),
         //call the ExtractTextWebpackPlugin constructor and name our css file
     ],
     devServer: {
