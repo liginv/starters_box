@@ -12,6 +12,16 @@ let config = {
         path: path.resolve(__dirname, './public'), //output file
         filename: 'script.js' //output filename
     },
+    // resolve:{
+    //     extensions: [
+    //     '.js', '.json', '.scss', '.css', '.jpeg', '.jpg', 'gif', '.png', '.svg'
+    //     ],
+    //     // automatically reslove certain extensions
+    //     alias:{
+    //         // create aliases
+    //         images: path.resolve(__dirname, 'src/assets/images') // src/assets/images alias
+    //     }
+    // },
     module: {
         rules: [{
                 test: /\.js$/, // files ending with .js
@@ -26,39 +36,21 @@ let config = {
                                 })), //end extract
             },
             {
-                test: /\.(jpe?g|png}gif|svg)$/i,
-                loaders: ['file-loader?content=src/assets/images/&name=images/[path][name]/[ext]', {
-                    loader: 'image-webpack-loader',
-                    query: {
-                        mozjpeg: {
-                            progrssive: true,
-                            quality: 65
-                        },
-                        gifsicle: {
-                            interlaced: false,
-                        },
-                        // optipng.enabled: false will disable optipng
-                        optipng: {
-                            enable: false,
-                            optimizationLevel: 4,
-                        },
-                        pngquant: {
-                            quality: '65-90',
-                            speed: 4,
-                        },
-                        gifsicle: {
-                            interlaced: false,
-                        },
-                        // the webp option will enable WEBP
-                        webp: {
-                          quality: 75
-                        }
-                    },
-                }],
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                    loaders: [
+                    // 'file-loader?name=[name].[ext]&outputPath=images/&publicPath=images/'
+                    //  if both public & output path are same use below else above
+                      'file-loader?name=images/[name].[ext]', {
+                        loader: 'image-webpack-loader',
+                        // there are options to control 
+                        // image optimization within image-webpack-loader.
+                        // file-loader should run before image-webpack-loader
+                    },            
+                ],
                 exclude: /node_modules/,
-                include: __dirname,
-            },            
-        ]
+                include: __dirname,                                
+            },
+        ],
     },
     plugins: [
     	new ExtractTextWebpackPlugin('styles.css'),
