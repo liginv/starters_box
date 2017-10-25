@@ -1,8 +1,8 @@
 # STARTER'S BOX
----
-This is a boilerplate for easy start on web project with latest technology out-of-the-box.
 
-### Technology includes:
+This is a boilerplate for a easy start on web project(s) with latest technologies.
+
+### Technologies:
 * **Webpack 2** (*for tasks & bundling*)
 * **Service Worker** (*for PWA*)
 * **SCSS with hot-reload** (*for easy styling of css*)
@@ -10,6 +10,17 @@ This is a boilerplate for easy start on web project with latest technology out-o
 * **Production & Development Environment** (*for easy development workflow*)
 * **package-lock.json** (*for guarantee the dependencies across developer*)
 
+### Prerequisite:
+* node version:5+ <br>
+```
+% node -v
+v5.X.X or above
+```
+
+* webpack 2 <br>
+```
+% npm install -g webpack
+```
 
 ### Folder Structure:
 ```
@@ -49,8 +60,25 @@ This is a boilerplate for easy start on web project with latest technology out-o
 % npm run start
 ```
 
-* **To build the production-ready public files & folders** <br>
+* **To build production-ready public files & folders** <br>
 ```
 % npm run production
 ```
 
+* **To see the statistics of the build and other insights** <br>
+```
+% npm run stat
+```
+
+### Notes:
+* Create your files in **src** folder & calling upon any of the build process will create a **public** directory that serve the old fashion html folder(*except the service-worker(sw.js) file*).
+
+```
+public
+├── images
+│   └── . . .
+├── index.html
+├── script.js
+├── styles.css
+└── sw.js
+```
