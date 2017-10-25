@@ -5,6 +5,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 const WorkboxBuildWebpackPlugin = require('workbox-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackMonitor = require('webpack-monitor');
 
 let config = {
     entry: './src/index.js', //entry file
@@ -87,4 +88,17 @@ if (process.env.NODE_ENV == 'production') {
         new webpack.optimize.UglifyJsPlugin(), // call the uglify plugin
         new OptimizeCSSAssets() // call the css optimizer (minification)
     );
+}
+
+if (process.env.NODE_ENV == 'stat') {
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin(), // call the uglify plugin
+        new OptimizeCSSAssets(), // call the css optimizer (minification)
+        new WebpackMonitor({
+            capture: true, // -> default 'true'
+            target: '../monitor/stats.json', // default -> '../monitor/stats.json'
+            launch: true, // -> default 'false'
+            port: 3030, // default -> 8081
+        })
+    )
 }
