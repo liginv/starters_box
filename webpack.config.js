@@ -43,6 +43,11 @@ let config = {
                     //  if both public & output path are same use below else above
                       'file-loader?name=images/[name].[ext]', {
                         loader: 'image-webpack-loader',
+                        options: {
+                        name: function (resourcePath) {
+                            return myRenameFunction(resourcePath);
+                            }
+                        }
                         // there are options to control 
                         // image optimization within image-webpack-loader.
                         // file-loader should run before image-webpack-loader
