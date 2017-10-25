@@ -5,9 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack --progress && webpack-dev-server -d --hot --config webpack.config.js --watch",
-    "production": "NODE_ENV=production webpack",
-    "stat": "NODE_ENV=stat webpack"
+    "start": "npm run clean && webpack --progress && webpack-dev-server -d --hot --config webpack.config.js --watch",
+    "production": "npm run clean && NODE_ENV=production webpack",
+    "stat": "npm run clean && NODE_ENV=stat webpack",
+    "clean": "rimraf ./public/*"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "node-sass": "^4.5.3",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "postcss-loader": "^2.0.8",
+    "rimraf": "^2.6.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
