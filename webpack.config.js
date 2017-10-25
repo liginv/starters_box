@@ -12,16 +12,16 @@ let config = {
         path: path.resolve(__dirname, './public'), //output file
         filename: 'script.js' //output filename
     },
-    // resolve:{
-    //     extensions: [
-    //     '.js', '.json', '.scss', '.css', '.jpeg', '.jpg', 'gif', '.png', '.svg'
-    //     ],
-    //     // automatically reslove certain extensions
-    //     alias:{
-    //         // create aliases
-    //         images: path.resolve(__dirname, 'src/assets/images') // src/assets/images alias
-    //     }
-    // },
+    resolve:{
+        extensions: [
+        '.js', '.json', '.scss', '.css', '.jpeg', '.jpg', 'gif', '.png', '.svg'
+        ],
+        // automatically reslove certain extensions
+        alias:{
+            // create aliases
+            images: path.resolve(__dirname, 'src/assets/images') // src/assets/images alias
+        }
+    },
     module: {
         rules: [{
                 test: /\.js$/, // files ending with .js
