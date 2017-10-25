@@ -6,12 +6,13 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack --progress && webpack-dev-server -d --hot --config webpack.config.js --watch",
-    "production": "NODE_ENV=production webpack"
+    "production": "NODE_ENV=production webpack",
+    "stat": "NODE_ENV=stat webpack"
   },
-  "repository" :
-    { "type" : "git"
-    , "url" : "https://github.com/liginv/starters_box"
-    },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liginv/starters_box"
+  },
   "bugs": {
     "url": "https://github.com/liginv/starters_box/issues",
     "email": "ligindd@gmail.com"
@@ -43,6 +44,7 @@
     "uglifyjs-webpack-plugin": "^1.0.1",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3",
+    "webpack-monitor": "^1.0.13",
     "workbox-webpack-plugin": "^2.1.0"
   }
 }
