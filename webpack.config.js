@@ -41,7 +41,7 @@ let config = {
                     loaders: [
                     // 'file-loader?name=[name].[ext]&outputPath=images/&publicPath=images/'
                     //  if both public & output path are same use below else above
-                      'file-loader?name=images/[name].[ext]&context=src/assets/images'', {
+                      'file-loader?name=images/[name].[ext]&context=src/assets/images', {
                         loader: 'image-webpack-loader',
                         options: {
                         name: function (resourcePath) {
