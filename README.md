@@ -9,7 +9,8 @@ This is a boilerplate for an easy start on web project(s) with latest technologi
 * **SCSS with hot-reload** (*for easy styling of css*)
 * **Babel complier** (*for ES2015 support across browsers*)
 * **Production & Development Environment** (*for easy development workflow*)
-* **package-lock.json** (*for guarantee the dependencies across developer*)
+* **[package-lock.json](https://docs.npmjs.com/files/package-lock.json)** (*to guarantee the dependency tree 
+across developers*)
 
 ### Prerequisites:
 
