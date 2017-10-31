@@ -1,2 +1,2 @@
-require('./assets/stylesheets/styles.scss');
-require('images/starters_box');
+require('./assets/stylesheets/styles.scss')
+require('images/starters_box')
